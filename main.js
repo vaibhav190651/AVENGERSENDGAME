@@ -1,0 +1,85 @@
+var canvas = new fabric.Canvas('myCanvas');
+
+block_image_width = 30;
+block_image_height = 30;
+
+player_x = 10;
+player_y = 10;
+
+var player_object = "";
+var block_image_object = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.strangeharbors.com%2Fblog%2F2019%2F4%2F26%2Ffilm-review-avengers-endgame&psig=AOvVaw1RxGNVJv93OczP72ScAlov&ust=1619958871406000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCu65y_qPACFQAAAAAdAAAAABAK";
+
+function player_update()
+{
+    fabric.Image.fromURL("player.png", function(Img) {
+        player_object = Img;
+        
+        player_object.scaleToWidth(150);
+        player_object.scaleToHeight(140);
+        player_object.set({
+            top:player_y,left:player_x
+        });
+        canvas.add(player_object);
+    });
+    }
+
+    function new_image(get_image)
+    {
+        fabric.Image.fromURL(get_image, function(Img) {
+            block_image_object = Img;
+            
+            block_image_object.scaleToWidth(block_image_width);
+            block_image_object.scaleToHeight(block_image_height);
+            block_image_object.set({
+                top:player_y,left:player_x
+            });
+            canvas.add(block_image_object);
+        });
+        }
+        window.addEventListener("keydown", my_keydown);
+
+        function my_keydown(e)
+        {
+            keyPressed = e.keycode;
+            console.log(keyPressed);
+        
+        if(e.shiftkey == true && keyPressed =='80'){
+            console.log("p and shift pressed together ");
+            block_image_width = block_image_width + 5;
+            block_image_height = block_image_height + 5;
+            document.getElementById("current_width").innerHTML = block_image_width;
+            document.getElementById("current_height").innerHTML = block_image_height;
+
+        }
+
+             
+        if(e.shiftkey == true && keyPressed =='77'){
+            console.log("m and shift pressed together ");
+            block_image_width = block_image_width - 5;
+            block_image_height = block_image_height - 5;
+            document.getElementById("current_width").innerHTML = block_image_width;
+            document.getElementById("current_height").innerHTML = block_image_height;
+
+        }
+ if(keyPressed == '38'){
+    up();
+    console.log("up");
+    }
+
+if(keyPressed == '40'){
+    down();
+    console.log("down");
+        }
+
+ if(keyPressed == '37'){
+      left();
+       console.log("left");
+            }
+
+if(keyPressed == '39'){
+       right();
+      console.log("right");
+                }
+
+
+        }
