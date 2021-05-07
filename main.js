@@ -82,4 +82,38 @@ if(keyPressed == '39'){
                 }
 
 
-        }
+        } 
+if(keyPressed == '70') 
+        {
+             new_image('https://i.postimg.cc/hGnyTPLB/ironman-face.png'); 
+             console.log("f");   
+            } 
+
+
+if(keyPressed == '66') 
+            {
+     new_image('https://i.postimg.cc/FscwL6M0/spiderman-body.png');
+     console.log("b"); 
+          }
+
+
+ if(keyPressed == '76')    
+            {           
+      new_image('https://i.postimg.cc/KzF6GDqt/hulk-legs.png');
+     console.log("l");
+     }
+
+
+if(keyPressed == '82')
+ {
+    new_image('https://i.postimg.cc/8s8BGtwS/thor-right-hand.png');
+     console.log("r"); 
+    }
+
+if(keyPressed == '72')
+      {
+    new_image('https://i.postimg.cc/rw7ckW29/captain-america-left-hand.png');
+     console.log("h");
+     }
+
+    
